@@ -29,12 +29,11 @@ function onGalleryClick(event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
+  const dataSource = event.target.dataset.source;
 
-  openModal(event.target);
-}
-function openModal(original) {
   const instance = basicLightbox.create(`
-    <img src="${original.dataset.source}" width="1280">
+    <img src="${dataSource}" width="1280">
 `);
+
   instance.show();
 }
